@@ -1,0 +1,18 @@
+{% load static %}
+
+<nav class="navbar navbar-light fixed-top" style="background-color: #e3f2fd;">
+    <div class="row px-lg-3">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/brand.png' %}" width="45px" height="40px" alt=""> Stack Overclone
+        </a>
+        <form class="form-inline mt-2 mt-md-0 align-items-left">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <img src="{% static 'img/search.png' %}" width="30px" height="30px" alt="">
+            </button>
+        </form>
+
+        {% include 'include/nav_profile.html' %}
+    </div>
+
+</nav>

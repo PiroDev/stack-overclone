@@ -1,0 +1,37 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+<div class="row">
+    <h2>New Question</h2>
+</div>
+<hr align="left">
+<form>
+    <div class="form-group row">
+        <label for="title" class="col-sm-1 col-form-label">Title</label>
+        <div class="col-sm-11">
+            <input type="text" class="form-control" id="title"
+                placeholder="How to create Minecraft from scratch using C++ and OpenGL?">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="description" class="col-sm-1 col-form-label">Text</label>
+        <div class="col-sm-11">
+            <textarea class="form-control" id="description" rows="8" placeholder="Really, how?"></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="tags" class="col-sm-1 col-form-label">Tags</label>
+        <div class="col-sm-11">
+            <input type="text" class="form-control" id="tags" placeholder="Minecraft, C++, OpenGL">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <button class="btn btn-outline-success my-2" type="submit">
+                Ask!
+            </button>
+        </div>
+    </div>
+</form>
+{% endblock content %}

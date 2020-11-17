@@ -1,0 +1,21 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+    <div class="big-question">
+        {% include 'include/question_in_answers.html' %}
+    </div>
+    <hr align="left">
+    {% if answers.count %}
+        {% for answer in answers %}
+            {% include 'include/one_answer.html' %}
+        {% endfor %}
+    {% else %}
+        <h4>No one has yet answered this question. You can be the first!</h4>
+    {% endif %}
+    <hr align="left">
+    {% include 'include/answer_form.html' %}
+{% endblock content %}
+
+{% block paginator %}
+    {% include 'include/paginator.html' %}
+{% endblock paginator %}

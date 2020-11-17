@@ -1,0 +1,44 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>Stack Overclone</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/brand.png' %}" type="image/png">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        {% include 'include/header.html' %}
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+                <div class="col-4">
+                    {% include 'include/right_bar.html' %}
+                </div>
+            </div>
+
+            {% block paginator %}
+            {% endblock paginator %}
+        </div>
+    </main>
+
+    {% include 'include/footer.html' %}
+    <script src="{% static 'js/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/file_input.js' %}"></script>
+</body>
+
+</html>
