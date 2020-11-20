@@ -1,6 +1,7 @@
 from django.urls import path, include
 import users.urls, questions.urls
 from django.contrib import admin
+from django.shortcuts import redirect
 from .error_views import *
 
 handler404 = page_not_found_view
