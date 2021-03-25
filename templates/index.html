@@ -1,0 +1,22 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+    <div class="row no-gutters">
+        <div class="col-4 question-select">
+            <h2>New Questions</h2>
+        </div>
+        <div class="col-4 question-select">
+            <a href="{% url 'hot_questions' %}">
+                <h3>Hot Questions</h3>
+            </a>
+        </div>
+    </div>
+    <!-- Questions -->
+    {% for question in questions %}
+        {% include 'include/question_in_search.html' %}
+    {% endfor %}
+{% endblock content %}
+
+{% block paginator %}
+    {% include 'include/paginator.html' %}
+{% endblock paginator %}

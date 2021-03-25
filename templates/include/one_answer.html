@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="row question-box">
+    <div class="col-2">
+        <div class="row justify-content-md-center">
+            <img src="{% static 'img/profile_picture.png' %}" width="50px" height="50px" alt="">
+        </div>
+        <div class="row justify-content-md-center">
+            <button class="button-vote button-like">
+                <img src="{% static 'img/like.png' %}" width="10px" height="10px" alt="" class="img-vote">
+            </button>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="rating">
+                {{ answer.rating.value }}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <button class="button-vote button-dislike">
+                <img src="{% static 'img/dislike.png' %}" width="10px" height="10px" alt="" class="img-vote">
+            </button>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="row">
+            {{ answer.text }}
+        </div>
+        <div class="row justify-content-end">
+            {% if question.author != user.userprofile and answer.is_correct %}
+            <div class="col-1">
+                <img src="{% static 'img/correct.png' %}" width="30px" height="30px" alt="">
+            </div>
+            <div class="col-4"> This answer marked as
+                correct
+            </div>
+            {% elif question.author == user.userprofile %}
+            <form action="submit">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="isCorrect" "{% if answer.is_correct %} 
+                        checked {% endif %}">
+                    <label class="form-check-label" for="isCorrect">Answer is correct</label>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+        <div class="row justify-content-end">
+        </div>
+    </div>
+</div>

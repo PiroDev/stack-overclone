@@ -1,0 +1,17 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+    <!-- Search tag -->
+    <div class="row">
+        <div class="col">
+            <h2>Tag: {{ tag }}</h2>
+        </div>
+    </div>
+    {% for question in questions %}
+        {% include 'include/question_in_search.html' %}
+    {% endfor %}
+{% endblock content %}
+
+{% block paginator %}
+    {% include 'include/paginator.html' %}
+{% endblock paginator %}
